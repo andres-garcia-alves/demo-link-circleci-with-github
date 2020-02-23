@@ -7,4 +7,4 @@ services:
     # depends_on:
     #  - lalala
   # lalala:
-  #  image: images:tag de la imagen predecesora
+  #  image: images:tag-de-la-imagen-predecesora

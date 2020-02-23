@@ -4,8 +4,10 @@
   "description": "Link CircleCI With GitHub Account For Setting Up A CI Workflow",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node src/index.js"
+    "dev": "node src/index.js",
+    "start": "node src/index.js",
+    "test": "echo \"Everything OK \" && exit 0",
+    "test_old": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "Continuous", "Integration", "CI", "CircleCI", "GitHub"

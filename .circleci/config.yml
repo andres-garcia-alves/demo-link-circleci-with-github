@@ -1,0 +1,41 @@
+version: 2
+jobs:
+  build:
+    working_directory: /app
+    docker:
+      # - image: docker:17.05.0-ce-git
+      - image: circleci/node:10.16.3
+    steps:
+      - checkout
+      # - setup_remote_docker
+      - run:
+        name: update-npm
+        command: 'sudo npm install -g npm@5'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - run:
+          name: install-npm
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: run-tests
+          command: npm test
+      # - run:
+      #    name: run-tests
+      #    command: |
+      #      docker-compose up -d
+      #      docker-compose run dockerapp npm test
+      # - run:
+      #  name: code-coverage
+      #  command: './node_modules/.bin/nyc report --reporter=text-lcov'
+      - deploy:
+          name: push-application-docker-image
+          command: |
+            docker login -e $DOCKER_HUB_EMAIL -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
+            docker tag dockerapp_dockerapp $DOCKER_HUB_USER_ID/dockerapp:$CIRCLE_SHA1
+            docker tag dockerapp_dockerapp $DOCKER_HUB_USER_ID/dockerapp:latest
+            docker push $DOCKER_HUB_USER_ID/dockerapp:$CIRCLE_SHA1
+            docker push $DOCKER_HUB_USER_ID/dockerapp:latest

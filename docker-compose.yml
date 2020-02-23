@@ -1,0 +1,10 @@
+version: "3.0"
+services:
+  dockerapp:
+    build: .
+    ports:
+      - "4000:4000"
+    # depends_on:
+    #  - lalala
+  # lalala:
+  #  image: images:tag de la imagen predecesora

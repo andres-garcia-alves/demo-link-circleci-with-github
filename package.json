@@ -1,0 +1,18 @@
+{
+  "name": "link-circleci-with-github",
+  "version": "1.0.0",
+  "description": "Link CircleCI With GitHub Account For Setting Up A CI Workflow",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node src/index.js"
+  },
+  "keywords": [
+    "Continuous", "Integration", "CI", "CircleCI", "GitHub"
+  ],
+  "author": "Andres Garcia Alves",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

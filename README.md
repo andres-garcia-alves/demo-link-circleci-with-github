@@ -1,6 +1,6 @@
 # Link CircleCI with GitHub
 
-Example of Linking CircleCI With GitHub Account For Setting Up A CI Workflow.  
+Example of Linking CircleCI with a GitHub Account for Setting Up a CI-Workflow.  
 
 Usage:  
 

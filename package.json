@@ -13,7 +13,7 @@
     "Continuous", "Integration", "CI", "CircleCI", "GitHub"
   ],
   "author": "Andres Garcia Alves",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.17.1"
   }
